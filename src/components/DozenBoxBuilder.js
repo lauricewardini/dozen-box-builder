@@ -63,17 +63,17 @@ const DozenBoxBuilder = () => {
         transition={{ duration: 0.3 }}
       >
         {/* Donut Placement Restricted to Bottom Half */}
-        <div className="grid grid-cols-4 gap-2 p-4 h-[60%] w-full place-items-center">
+        <div className="grid grid-cols-4 gap-1 p-2 h-[60%] w-full place-items-center">
           {selectedFlavors.map((flavor, index) => (
             <motion.div
               key={index}
-              className={`border rounded-lg flex items-center justify-center bg-gray-100 relative ${flavor.size === "long" ? "col-span-2 w-16 h-8" : "col-span-1 w-10 h-10"}`}
+              className={`border rounded-lg flex items-center justify-center bg-gray-100 relative ${flavor.size === "long" ? "col-span-2 w-14 h-6" : "col-span-1 w-8 h-8"}`}
               whileTap={{ scale: 0.9 }}
             >
               <motion.img
                 src={flavor.image}
                 alt={flavor.name}
-                className={flavor.size === "long" ? "w-14 h-7" : "w-8 h-8"}
+                className={flavor.size === "long" ? "w-12 h-5" : "w-6 h-6"}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
@@ -95,7 +95,7 @@ const DozenBoxBuilder = () => {
             whileTap={{ scale: 0.9 }}
             onClick={() => addFlavor(flavor)}
           >
-            <img src={flavor.image} alt={flavor.name} className="w-12 h-12 rounded-lg" />
+            <img src={flavor.image} alt={flavor.name} className="w-10 h-10 rounded-lg" />
             <span className="text-sm mt-1">{flavor.name}</span>
           </motion.div>
         ))}
