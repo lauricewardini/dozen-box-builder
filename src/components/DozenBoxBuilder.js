@@ -56,11 +56,12 @@ const DozenBoxBuilder = () => {
         <div className="grid grid-cols-4 gap-2 p-4 h-1/2 items-end">
           {selectedFlavors.map((flavor, index) => (
             <motion.div
-              key={index}
-              className={flavor.size === "long" ? "col-span-2 w-32 h-16" : "col-span-1 w-16 h-16"}
-              className="border rounded-lg flex items-center justify-center bg-gray-100 relative"
-              whileTap={{ scale: 0.9 }}
-            >
+   key={index}
+   className={`border rounded-lg flex items-center justify-center bg-gray-100 relative ${
+     flavor.size === "long" ? "col-span-2 w-32 h-16" : "col-span-1 w-16 h-16"
+   }`}
+   whileTap={{ scale: 0.9 }}
+>
               <motion.img
                 src={flavor.image}
                 alt={flavor.name}
@@ -77,7 +78,7 @@ const DozenBoxBuilder = () => {
       </motion.div>
       
       {/* Flavor Selection */}
-      <div className="grid grid-cols-3 gap-4 mt-6">
+      <div className="grid grid-cols-4 gap-2 p-4 h-full items-start">
         {flavors.map((flavor) => (
           <motion.div
             key={flavor.name}
