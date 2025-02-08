@@ -45,12 +45,13 @@ const DozenBoxBuilder = () => {
       
       {/* Visual Donut Box */}
       <motion.div 
-        className="relative w-[640px] h-[500px] bg-cover bg-center border p-4 rounded-xl" 
+        className="relative w-[640px] h-[500px] bg-cover bg-center border p-4 rounded-xl flex flex-col justify-end" 
         style={{ backgroundImage: "url('/images/donutbox.png')" }}
         animate={boxShake ? { x: [0, -5, 5, -5, 0] } : {}}
         transition={{ duration: 0.3 }}
       >
-        <div className="grid grid-cols-4 gap-2 p-4">
+        {/* Donut Placement Restricted to Bottom Half */}
+        <div className="grid grid-cols-4 gap-2 p-4 h-1/2 items-end">
           {selectedFlavors.map((flavor, index) => (
             <motion.div
               key={index}
@@ -98,3 +99,4 @@ const DozenBoxBuilder = () => {
 };
 
 export default DozenBoxBuilder;
+
