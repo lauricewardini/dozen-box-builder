@@ -47,40 +47,25 @@ const DozenBoxBuilder = () => {
       
       {/* Visual Donut Box */}
       <motion.div 
-        className="relative w-[640px] h-[400px] bg-cover bg-center border p-4 rounded-xl flex flex-col justify-end overflow-hidden" 
-        style={{ 
-          backgroundImage: "url('/images/donutbox.png')", 
-          backgroundSize: "cover", 
-          backgroundPosition: "center", 
-          minHeight: "400px", 
-          width: "640px", 
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          alignItems: "flex-end"
-        }}
+        className="relative w-[640px] h-[400px] border rounded-xl overflow-hidden flex justify-center items-end"
+        style={{ backgroundImage: "url('/images/donutbox.png')", backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
         animate={boxShake ? { x: [0, -5, 5, -5, 0] } : {}}
         transition={{ duration: 0.3 }}
       >
-        {/* Donut Placement Restricted to Bottom Half */}
-        <div className="grid grid-cols-4 gap-1 p-2 h-[60%] w-full place-items-center">
+        {/* Defined Space Where Donuts Should Appear */}
+        <div className="absolute bottom-[40px] w-[500px] h-[200px] flex flex-wrap justify-center items-center">
           {selectedFlavors.map((flavor, index) => (
-            <motion.div
+            <motion.img
               key={index}
-              className={`border rounded-lg flex items-center justify-center bg-gray-100 relative ${flavor.size === "long" ? "col-span-2 w-14 h-6" : "col-span-1 w-8 h-8"}`}
-              whileTap={{ scale: 0.9 }}
-            >
-              <motion.img
-                src={flavor.image}
-                alt={flavor.name}
-                className={flavor.size === "long" ? "w-12 h-5" : "w-6 h-6"}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0, opacity: 0 }}
-                transition={{ duration: 0.3, type: "spring" }}
-                onClick={() => removeFlavor(index)}
-              />
-            </motion.div>
+              src={flavor.image}
+              alt={flavor.name}
+              className={flavor.size === "long" ? "w-[80px] h-[40px]" : "w-[50px] h-[50px]"}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{ duration: 0.3, type: "spring" }}
+              onClick={() => removeFlavor(index)}
+            />
           ))}
         </div>
       </motion.div>
