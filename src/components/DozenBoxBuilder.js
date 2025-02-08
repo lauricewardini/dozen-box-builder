@@ -67,13 +67,13 @@ const DozenBoxBuilder = () => {
           {selectedFlavors.map((flavor, index) => (
             <motion.div
               key={index}
-              className={`border rounded-lg flex items-center justify-center bg-gray-100 relative ${flavor.size === "long" ? "col-span-2 w-20 h-10" : "col-span-1 w-12 h-12"}`}
+              className={`border rounded-lg flex items-center justify-center bg-gray-100 relative ${flavor.size === "long" ? "col-span-2 w-16 h-8" : "col-span-1 w-10 h-10"}`}
               whileTap={{ scale: 0.9 }}
             >
               <motion.img
                 src={flavor.image}
                 alt={flavor.name}
-                className={flavor.size === "long" ? "w-16 h-8" : "w-10 h-10"}
+                className={flavor.size === "long" ? "w-14 h-7" : "w-8 h-8"}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
@@ -95,7 +95,7 @@ const DozenBoxBuilder = () => {
             whileTap={{ scale: 0.9 }}
             onClick={() => addFlavor(flavor)}
           >
-            <img src={flavor.image} alt={flavor.name} className="w-16 h-16 rounded-lg" />
+            <img src={flavor.image} alt={flavor.name} className="w-12 h-12 rounded-lg" />
             <span className="text-sm mt-1">{flavor.name}</span>
           </motion.div>
         ))}
@@ -110,4 +110,3 @@ const DozenBoxBuilder = () => {
 };
 
 export default DozenBoxBuilder;
-
