@@ -3,15 +3,7 @@ import { motion } from "framer-motion";
 import Button from "./ui/Button";
 
 const flavors = [
-  { name: "Chocolate Ring", image: "/images/chocolatering.png", size: "round" },
-  { name: "Cinnamon Crumb", image: "/images/crinnamoncrumb.png", size: "round" },
-  { name: "Cream Filled", image: "/images/creamfilled.png", size: "round" },
-  { name: "Glazed Ring", image: "/images/glazed.png", size: "round" },
-  { name: "Maple Bar", image: "/images/maplebar.png", size: "long" },
-  { name: "Pink Sprinkle", image: "/images/pinksprinkle.png", size: "round" },
-  { name: "Plain Cake", image: "/images/plaincake.png", size: "long" },
-  { name: "Twist", image: "/images/twist.png", size: "long" }, 
-  { name: "Vegan Chocolate Ring", image: "/images/veganchocolate.png", size: "round" },
+  { name: "Devil's Food Cake", image: "/images/devilsfoodcake.png", size: "round" },
 ];
 
 const DozenBoxBuilder = () => {
