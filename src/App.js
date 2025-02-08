@@ -1,5 +1,5 @@
 import React from "react";
-import DozenBoxBuilder from "./components/DozenBoxBuilder";
+import DozenBoxBuilder from "./components/DozenBoxBuilder.js";
 
 function App() {
   return (
