@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 import Button from "./ui/Button";
 
 const flavors = [
-  { name: "Chocolate Ring", image: "/images/chocolatering.png", size: "round" },
-  { name: "Cinnamon Crumb", image: "/images/crinnamoncrumb.png", size: "round" },
-  { name: "Cream Filled", image: "/images/creamfilled.png", size: "round" },
-  { name: "Glazed Ring", image: "/images/glazed.png", size: "round" },
-  { name: "Maple Bar", image: "/images/maplebar.png", size: "long" },
-  { name: "Pink Sprinkle", image: "/images/pinksprinkle.png", size: "round" },
-  { name: "Plain Cake", image: "/images/plaincake.png", size: "long" },
-  { name: "Twist", image: "/images/twist.png", size: "long" }, 
-  { name: "Vegan Chocolate Ring", image: "/images/veganchocolate.png", size: "round" },
+  { name: "Chocolate Ring", image: process.env.PUBLIC_URL + "/images/chocolatering.png", size: "round" },
+  { name: "Cinnamon Crumb", image: process.env.PUBLIC_URL + "/images/crinnamoncrumb.png", size: "round" },
+  { name: "Cream Filled", image: process.env.PUBLIC_URL + "/images/creamfilled.png", size: "round" },
+  { name: "Glazed Ring", image: process.env.PUBLIC_URL + "/images/glazed.png", size: "round" },
+  { name: "Maple Bar", image: process.env.PUBLIC_URL + "/images/maplebar.png", size: "long" },
+  { name: "Pink Sprinkle", image: process.env.PUBLIC_URL + "/images/pinksprinkle.png", size: "round" },
+  { name: "Plain Cake", image: process.env.PUBLIC_URL + "/images/plaincake.png", size: "long" },
+  { name: "Twist", image: process.env.PUBLIC_URL + "/images/twist.png", size: "long" }, 
+  { name: "Vegan Chocolate Ring", image: process.env.PUBLIC_URL + "/images/veganchocolate.png", size: "round" },
 ];
 
 const DozenBoxBuilder = () => {
@@ -47,21 +47,19 @@ const DozenBoxBuilder = () => {
       
       {/* Visual Donut Box */}
       <motion.div 
-        className="relative w-[640px] h-[500px] bg-cover bg-center border p-4 rounded-xl flex flex-col justify-end" 
-        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/donut-box.png)` }}
+        className="relative w-[640px] h-[400px] bg-cover bg-center border p-4 rounded-xl flex flex-col justify-end overflow-hidden" 
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/donut-box.png)`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
         animate={boxShake ? { x: [0, -5, 5, -5, 0] } : {}}
         transition={{ duration: 0.3 }}
       >
         {/* Donut Placement Restricted to Bottom Half */}
-        <div className="grid grid-cols-4 gap-2 p-4 h-1/2 items-end">
+        <div className="grid grid-cols-4 gap-2 p-4 h-[60%] w-full place-items-center">
           {selectedFlavors.map((flavor, index) => (
             <motion.div
-   key={index}
-   className={`border rounded-lg flex items-center justify-center bg-gray-100 relative ${
-     flavor.size === "long" ? "col-span-2 w-32 h-16" : "col-span-1 w-16 h-16"
-   }`}
-   whileTap={{ scale: 0.9 }}
->
+              key={index}
+              className={`border rounded-lg flex items-center justify-center bg-gray-100 relative ${flavor.size === "long" ? "col-span-2 w-32 h-16" : "col-span-1 w-16 h-16"}`}
+              whileTap={{ scale: 0.9 }}
+            >
               <motion.img
                 src={flavor.image}
                 alt={flavor.name}
@@ -78,7 +76,7 @@ const DozenBoxBuilder = () => {
       </motion.div>
       
       {/* Flavor Selection */}
-      <div className="grid grid-cols-4 gap-2 p-4 h-full items-start">
+      <div className="grid grid-cols-3 gap-4 mt-6">
         {flavors.map((flavor) => (
           <motion.div
             key={flavor.name}
