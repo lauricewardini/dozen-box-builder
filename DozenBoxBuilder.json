@@ -46,7 +46,7 @@ const DozenBoxBuilder = () => {
       {/* Visual Donut Box */}
       <motion.div 
         className="relative w-[640px] h-[500px] bg-cover bg-center border p-4 rounded-xl" 
-        style={{ backgroundImage: "url('/images/donut-box.png')" }}
+        style={{ backgroundImage: "url('/images/donutbox.png')" }}
         animate={boxShake ? { x: [0, -5, 5, -5, 0] } : {}}
         transition={{ duration: 0.3 }}
       >
