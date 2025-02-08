@@ -3,13 +3,15 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 const flavors = [
-  { name: "Chocolate", image: "/images/chocolate.png", size: "round" },
-  { name: "Glazed", image: "/images/glazed.png", size: "round" },
-  { name: "Strawberry", image: "/images/strawberry.png", size: "round" },
-  { name: "Blueberry", image: "/images/blueberry.png", size: "round" },
-  { name: "Cinnamon Sugar", image: "/images/cinnamon.png", size: "round" },
-  { name: "Maple", image: "/images/maple.png", size: "round" },
-  { name: "Long John", image: "/images/long-john.png", size: "long" },
+  { name: "Chocolate Ring", image: "/images/chocolatering.png", size: "round" },
+  { name: "Cinnamon Crumb", image: "/images/crinnamoncrumb.png", size: "round" },
+  { name: "Cream Filled", image: "/images/creamfilled.png", size: "round" },
+  { name: "Glazed Ring", image: "/images/glazed.png", size: "round" },
+  { name: "Maple Bar", image: "/images/maplebar.png", size: "long" },
+  { name: "Pink Sprinkle", image: "/images/pinksprinkle.png", size: "round" },
+  { name: "Plain Cake", image: "/images/plaincake.png", size: "long" },
+  { name: "Twist", image: "/images/twist.png", size: "long" }, 
+  { name: "Vegan Chocolate Ring", image: "/images/veganchocolate.png", size: "round" },
 ];
 
 const DozenBoxBuilder = () => {
