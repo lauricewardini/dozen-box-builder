@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import Button from "./ui/Button";
 
 const flavors = [
   { name: "Chocolate Ring", image: "/images/chocolatering.png", size: "round" },
